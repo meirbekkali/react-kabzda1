@@ -1,7 +1,7 @@
 import React from "react";
 import d from './Dialogs.module.css'
-import Message from "./MessagesFromUsers/MessageComponent";
-import User from "./Users/UserComponent";
+import MessageContainer from "./MessagesFromUsers/MessageComponentContainer";
+import UserContainer from "./Users/UserContainer";
 
 
 
@@ -11,11 +11,10 @@ const Dialogs = (props) => {
     return (
         <div className={d.Dialogs}>
             <div >
-            <User dataOfUsersName={props.data.DialogsPageUsers.DataOfUsersName}/>
+            <UserContainer store ={props.store}/>
             </div>
             <div>
-            <Message dataOfMessage={props.data.DialogsPageMessages}
-                     dispatch={props.dispatch}/>
+            <MessageContainer store={props.store}/>
         </div>
         </div>
     )
