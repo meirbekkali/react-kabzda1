@@ -1,0 +1,20 @@
+.elements {
+    display: grid;
+    margin: 50px;
+
+
+
+}
+
+.img {
+
+    width: 100px;
+    height: 100px;
+}
+.selected{
+    font-weight: bold;
+}
+
+
+
+

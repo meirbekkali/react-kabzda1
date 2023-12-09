@@ -1,6 +1,6 @@
 import React from "react";
 import d from './Dialogs.module.css'
-import MessageContainer from "./MessagesFromUsers/MessageComponentContainer";
+import MessageContainer from "./MessagesFromUsers/MessageContainer";
 import UserContainer from "./Users/UserContainer";
 
 
@@ -11,10 +11,10 @@ const Dialogs = (props) => {
     return (
         <div className={d.Dialogs}>
             <div >
-            <UserContainer store ={props.store}/>
+            <UserContainer/>
             </div>
             <div>
-            <MessageContainer store={props.store}/>
+            <MessageContainer/>
         </div>
         </div>
     )

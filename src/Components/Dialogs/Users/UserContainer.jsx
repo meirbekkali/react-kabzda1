@@ -1,12 +1,33 @@
-import React from "react";
 import Users from "./UserComponent";
+import {connect} from "react-redux";
 
-const UsersContainer=(props)=>{
-    let stateUsers = props.store.getState()
-    let dataOfUsersName =
-        stateUsers.DialogsState.DialogsState.DialogsPageUsers.DataOfUsersName
 
-    return <Users dataOfUsersName={dataOfUsersName}/>
+// let UsersContainer = (props) => {
+//     return (
+//         <StoreContext.Consumer>
+//             {store => {
+//                 let
+//                     stateUsers = store.getState()
+//                 let dataOfUsersName =
+//                     stateUsers.DialogsState.DialogsState.DialogsPageUsers.DataOfUsersName
+//                 return (
+//
+//                     < Users
+//                         dataOfUsersName={dataOfUsersName}
+//                     />
+//                 )
+//             }
+//             }
+//         </StoreContext.Consumer>
+//     )
+// }
+
+
+let mapStateToProps = (state) => {
+    return {
+        dataOfUsersName: state.DialogsState.DialogsState.DialogsPageUsers.DataOfUsersName
+    }
 }
 
+const UsersContainer = connect(mapStateToProps)(Users)
 export default UsersContainer

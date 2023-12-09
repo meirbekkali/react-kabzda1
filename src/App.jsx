@@ -2,10 +2,11 @@ import React from "react";
 import './App.css';
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
-import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import StoreContext from "./Context";
+import Users from "./Components/Dialogs/Users/UserComponent";
+import UserSearchContainer from "./Components/FindUser/UserSearchContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 const App = (props) => {
     return (
@@ -17,14 +18,23 @@ const App = (props) => {
                     <Routes>
                         <Route path='/profile'
                                Component={() =>
-                                   <Profile
+                                   <ProfileContainer
 
                                    />}
                         />
                         <Route path='/dialogs'
                                Component={() =>
                                    <Dialogs
-
+                                   />}
+                        />
+                        <Route path='/users'
+                               Component={() =>
+                                   <Users
+                                   />}
+                        />
+                        <Route path='/UserSearch'
+                               Component={() =>
+                                   <UserSearchContainer
                                    />}
                         />
                     </Routes>

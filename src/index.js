@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from "./Redux/redux-store";
-import StoreContext from "./Context";
+import {Provider} from "react-redux";
+
 
 
 
@@ -13,14 +14,14 @@ export let rerenderEntireTreeIndex=()=>{
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <StoreContext.Provider value={store}>
+            <Provider store={store}>
             <App/>
-            </StoreContext.Provider>
+            </Provider>
         </React.StrictMode>
     );
 }
-rerenderEntireTreeIndex(Data.getState());
-Data.subscribe(rerenderEntireTreeIndex);
+ rerenderEntireTreeIndex(store.getState());
+// store.subscribe(rerenderEntireTreeIndex);
 
 
 reportWebVitals();

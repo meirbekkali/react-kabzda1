@@ -1,0 +1,18 @@
+<script>
+    let a = {
+        name:'Meirbek',
+        graduation:{
+            state:'Siberea',
+            years:'5',
+            faculty:'pharmacy',
+            jobDetails: {
+                location:'Shymkent',
+                dedpartment:'quality'
+            }
+        }
+    }
+
+    let b = {...a}
+    b.graduation.faculty = 'engineer'
+    window.alert(a.graduation.faculty)
+</script>
