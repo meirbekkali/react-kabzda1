@@ -1,5 +1,3 @@
-//Const for types in  createActions
-
 import profile from "../Components/Profile/Profile";
 
 const ADD_POST = 'ADD-POST'
@@ -10,23 +8,18 @@ const SET_USER_PROFILE = 'SET-USER-PROFILE'
 let stateData = {
     ProfilePagePosts: {
         Data_of_Posts: [],
-        NewPostText:
-            'it-kamasutra.com',
+        NewPostText:'it-kamasutra.com',
         profile:null
     }
 }
 
 export let postsReducer = (state = stateData.ProfilePagePosts, action) => {
-
-
-    let stateCopy = {...state}
-    stateCopy.Data_of_Posts = [...state.Data_of_Posts]
-    stateCopy.NewPostText = state.NewPostText
+    // let stateCopy = {...state}
+    // stateCopy.Data_of_Posts = [...state.Data_of_Posts]
+    // stateCopy.NewPostText = state.NewPostText
 
     switch (action.type) {
-
-
-        //Reducer Добавление нового поста 
+        //Reducer Добавление нового поста
         case 'ADD-POST':
             return {
                 ...state,
@@ -43,7 +36,13 @@ export let postsReducer = (state = stateData.ProfilePagePosts, action) => {
                 NewPostText: action.Symbols
             };
         case 'SET-USER-PROFILE':
-            return{...state,profile:action.profile}
+            console.log(action.profile)
+            return   {
+            ...state,
+                profile: action.profile
+        };
+
+
         default:
             return state;
 

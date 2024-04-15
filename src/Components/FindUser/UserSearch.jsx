@@ -23,33 +23,32 @@ let UserSearch = (props) => {
                     (
                         <div key={e.id} className={s.elements}>
 
-                            <div>
-                                <NavLink to={'/profile'}>
-                                {/*<NavLink to={'/profile'+e.id}>*/}
-                                <img className={s.img} src={e.photos.small !== null ? e.photos.small : userPhoto}
-                                     alt={`${e.name}'s avatar`}/>
-                                </NavLink>
-                            </div>
+                                <div>
+                                    {/*<NavLink to={'/profile'}>*/}
+                                    <NavLink to={'/profile/'+e.id}>
+                                    <img className={s.img} src={e.photos.small !== null ? e.photos.small : userPhoto}
+                                         alt={`${e.name}'s avatar`}/>
+                                    </NavLink>
+                                </div>
 
-                            <div>
-                                {e.name}
-                            </div>
+                                <div>
+                                    {e.name}
+                                </div>
 
-                            <div>
-                                {e.followed ? <button
-                                    onClick={() => props.onUnFollow(e.id)}>
-                                    Unfollow
-                                </button> : <button className={s.button}
-                                                    onClick={() => props.onFollow(e.id)}>
-                                    Follow
-                                </button>
-                                }
-                            </div>
+                                <div>
+                                    {e.followed ? <button
+                                        onClick={() => props.onUnFollow(e.id)}>
+                                        Unfollow
+                                    </button> : <button className={s.button}
+                                                        onClick={() => props.onFollow(e.id)}>
+                                        Follow
+                                    </button>
+                                    }
+                                </div>
 
-                            <span className={s.posts}>
-                                {e.status}
-                            </span>
-
+                                <span className={s.posts}>
+                                    {e.status}
+                                </span>
                         </div>
                     )
                 )

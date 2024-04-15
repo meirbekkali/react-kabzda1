@@ -16,7 +16,7 @@ let stateData = {
 
 
 export const userReducer = (state = stateData, action) => {
-    console.log('Current State:', state);
+
 
     switch (action.type) {
         case FOLLOW:
@@ -28,7 +28,7 @@ export const userReducer = (state = stateData, action) => {
                         {return e}
                 }),
             };
-            console.log('New State (Follow):', newStateFollow);
+
              return newStateFollow;
 
         case UNFOLLOW:
@@ -41,7 +41,7 @@ export const userReducer = (state = stateData, action) => {
                         {return e}
                 }),
             };
-            console.log('New State (Unfollow):', newStateUnfollow);
+
             return newStateUnfollow;
         case   SET_USERS:{
             return {
